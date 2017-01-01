@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SimpleLayout_Example' do
+  pod 'SimpleLayout', :path => '../'
+
+  target 'SimpleLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
