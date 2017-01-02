@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23F20EDA1E19C91100C9F469 /* FillExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F20ED91E19C91100C9F469 /* FillExampleViewController.swift */; };
+		23F20EDC1E19CEFF00C9F469 /* ChainExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F20EDB1E19CEFF00C9F469 /* ChainExampleViewController.swift */; };
 		28F258DBF61C7B38CABCFF28 /* Pods_SimpleLayout_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3EBD14DC96AD70E1197C7F /* Pods_SimpleLayout_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -29,8 +31,10 @@
 
 /* Begin PBXFileReference section */
 		147AEB46DCC67659A622C312 /* Pods-SimpleLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleLayout_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleLayout_Tests/Pods-SimpleLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		23F20ED91E19C91100C9F469 /* FillExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillExampleViewController.swift; sourceTree = "<group>"; };
+		23F20EDB1E19CEFF00C9F469 /* ChainExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainExampleViewController.swift; sourceTree = "<group>"; };
 		456E0A75DB90B84D8637B856 /* Pods_SimpleLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56EFCB70F846899C432C3B82 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		56EFCB70F846899C432C3B82 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5E935710455BEA559D1A63D2 /* Pods-SimpleLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleLayout_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleLayout_Example/Pods-SimpleLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SimpleLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,8 +48,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9DC860FB07CB84DC56DF875D /* Pods-SimpleLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleLayout_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleLayout_Example/Pods-SimpleLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AC3EBD14DC96AD70E1197C7F /* Pods_SimpleLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6CD3772904B24A9348F7657 /* SimpleLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SimpleLayout.podspec; path = ../SimpleLayout.podspec; sourceTree = "<group>"; };
-		F26F975C52218D216F7E9443 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B6CD3772904B24A9348F7657 /* SimpleLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SimpleLayout.podspec; path = ../SimpleLayout.podspec; sourceTree = "<group>"; };
+		F26F975C52218D216F7E9443 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F96751B2267F1D2975A3C4A4 /* Pods-SimpleLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleLayout_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleLayout_Tests/Pods-SimpleLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				23F20EDB1E19CEFF00C9F469 /* ChainExampleViewController.swift */,
+				23F20ED91E19C91100C9F469 /* FillExampleViewController.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -215,9 +221,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -361,6 +370,8 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				23F20EDC1E19CEFF00C9F469 /* ChainExampleViewController.swift in Sources */,
+				23F20EDA1E19C91100C9F469 /* FillExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,11 +500,14 @@
 			baseConfigurationReference = 9DC860FB07CB84DC56DF875D /* Pods-SimpleLayout_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SimpleLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -502,11 +516,14 @@
 			baseConfigurationReference = 5E935710455BEA559D1A63D2 /* Pods-SimpleLayout_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SimpleLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -526,6 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -541,6 +559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

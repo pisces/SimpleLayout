@@ -1,0 +1,6 @@
+framework module Pods_SimpleLayout_Tests {
+  umbrella header "Pods-SimpleLayout_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

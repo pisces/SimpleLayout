@@ -1,0 +1,16 @@
+PODS:
+  - SimpleLayout (0.1.0)
+
+DEPENDENCIES:
+  - SimpleLayout (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleLayout:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SimpleLayout: 5d2379223b6c4e9d9d71c34ff23f06ec1ee46128
+
+PODFILE CHECKSUM: d9775c359133eddb1540c3777d427fb9879bac91
+
+COCOAPODS: 1.2.0.beta.1
