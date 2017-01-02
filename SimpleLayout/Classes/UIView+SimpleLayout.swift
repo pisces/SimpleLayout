@@ -3,7 +3,7 @@
 //  SimpleLayout
 //
 //  Created by pisces on 9/7/16.
-//  Copyright © 2016 Sangwon Park. All rights reserved.
+//  Copyright © 2016 Steve Kim. All rights reserved.
 //
 
 import UIKit
