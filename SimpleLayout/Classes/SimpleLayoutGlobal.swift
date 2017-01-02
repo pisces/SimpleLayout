@@ -3,6 +3,7 @@
 //  SimpleLayout
 //
 //  Created by pisces on 02/01/2017.
+//  Copyright © 2016 Steve Kim. All rights reserved.
 //
 //
 
