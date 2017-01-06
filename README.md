@@ -11,6 +11,30 @@ SimpleLayout helps you to using auto layout very easily
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### Difference in code
+
+## Using auto layout with pure iOS SDK
+```Swift
+let top = NSLayoutConstraint(item: unknownImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: -10)
+let trailing = NSLayoutConstraint(item: unknownImageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 10)
+let width = NSLayoutConstraint(item: unknownImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
+let height = NSLayoutConstraint(item: unknownImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
+            
+view.addConstraints([width, height])
+view.layoutIfNeeded()
+self.addConstraints([top, trailing])
+self.layoutIfNeeded()
+```
+
+## Using auto layout with SimpleLayout
+```Swift
+    view.layout()
+        .top(-10)
+        .trailing(10)
+        .width(fixed: 30)
+        .height(fixed: 30)
+```
+
 ### To implement auto layout using the fill method
 <p valign="top">
 <img src="Screenshot/sh_01.png" width="320"/>
