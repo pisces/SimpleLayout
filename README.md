@@ -28,11 +28,11 @@ self.layoutIfNeeded()
 
 #### Using auto layout with SimpleLayout
 ```Swift
-    view.layout()
-        .top(-10)
-        .trailing(10)
-        .width(fixed: 30)
-        .height(fixed: 30)
+view.layout
+    .top(-10)
+    .trailing(10)
+    .width(fixed: 30)
+    .height(fixed: 30)
 ```
 
 ### To implement auto layout using the fill method
