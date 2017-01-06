@@ -13,7 +13,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ### Difference in code
 
-## Using auto layout with pure iOS SDK
+#### Using auto layout with pure iOS SDK
 ```Swift
 let top = NSLayoutConstraint(item: unknownImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: -10)
 let trailing = NSLayoutConstraint(item: unknownImageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 10)
@@ -26,7 +26,7 @@ self.addConstraints([top, trailing])
 self.layoutIfNeeded()
 ```
 
-## Using auto layout with SimpleLayout
+#### Using auto layout with SimpleLayout
 ```Swift
     view.layout()
         .top(-10)
