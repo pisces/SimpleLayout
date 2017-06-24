@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SimpleLayout
+import SimpleLayout_Swift
 
 class FillExampleViewController: UIViewController {
     

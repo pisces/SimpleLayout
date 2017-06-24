@@ -9,7 +9,7 @@
 
 import UIKit
 
-open class SimpleLayoutObject: NSObject {
+public class SimpleLayoutObject: NSObject {
     
     // MARK: - Properties
     
@@ -198,16 +198,7 @@ open class SimpleLayoutObject: NSObject {
 }
 
 public struct NSLayoutConstraints {
-    var leading: NSLayoutConstraint?
-    var top: NSLayoutConstraint?
-    var trailing: NSLayoutConstraint?
-    var bottom: NSLayoutConstraint?
-    var height: NSLayoutConstraint?
-    var width: NSLayoutConstraint?
-    var centerX: NSLayoutConstraint?
-    var centerY: NSLayoutConstraint?
-    
-    var array: [NSLayoutConstraint] {
+    public var array: [NSLayoutConstraint] {
         let _array: NSMutableArray = []
         appendConstraint(leading, toArray: _array)
         appendConstraint(top, toArray: _array)
@@ -219,8 +210,16 @@ public struct NSLayoutConstraints {
         appendConstraint(centerY, toArray: _array)
         return _array as NSArray as! [NSLayoutConstraint]
     }
+    public var leading: NSLayoutConstraint?
+    public var top: NSLayoutConstraint?
+    public var trailing: NSLayoutConstraint?
+    public var bottom: NSLayoutConstraint?
+    public var height: NSLayoutConstraint?
+    public var width: NSLayoutConstraint?
+    public var centerX: NSLayoutConstraint?
+    public var centerY: NSLayoutConstraint?
     
-    init(leading: NSLayoutConstraint? = nil,
+    public init(leading: NSLayoutConstraint? = nil,
          top: NSLayoutConstraint? = nil,
          trailing: NSLayoutConstraint? = nil,
          bottom: NSLayoutConstraint? = nil,

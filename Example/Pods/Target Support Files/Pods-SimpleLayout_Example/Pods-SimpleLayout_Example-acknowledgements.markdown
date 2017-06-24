@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## SimpleLayout
+## SimpleLayout-Swift
 
 Copyright (c) 2017 Steve Kim <pisces@retrica.co>
 

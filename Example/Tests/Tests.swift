@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import SimpleLayout
+import SimpleLayout_Swift
 
 class Tests: XCTestCase {
     

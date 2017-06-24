@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SimpleLayout
+import SimpleLayout_Swift
 
 class ChainExampleViewController: UIViewController {
     
@@ -39,6 +39,7 @@ class ChainExampleViewController: UIViewController {
             .top(by: subview2)
             .trailing()
             .bottom()
+        subview2.layout.constraints.width?.constant = 0
     }
     
     private func label(backgroundColor: UIColor, text: String) -> UILabel {
