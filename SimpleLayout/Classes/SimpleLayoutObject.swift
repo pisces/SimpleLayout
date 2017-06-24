@@ -38,10 +38,8 @@ open class SimpleLayoutObject: NSObject {
         removeBottom()
         
         let targetView = target != nil ? target! : view.superview
-        
         constraints.bottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
         constraints.bottom?.isActive = true
-        
         return self
     }
     
@@ -50,11 +48,9 @@ open class SimpleLayoutObject: NSObject {
         if centerX {
             self.centerX(by: target, x)
         }
-        
         if centerY {
             self.centerY(by: target, y)
         }
-        
         return self
     }
     
@@ -63,22 +59,18 @@ open class SimpleLayoutObject: NSObject {
         removeHorizontalConstraints()
         
         let targetView = target != nil ? target! : view.superview
-        
-        constraints.centerX = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: targetView, attribute: .centerX, multiplier: 1.0, constant: constant)
+        constraints.centerX = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: targetView, attribute: .centerX, multiplier: multiplier, constant: constant)
         constraints.centerX?.isActive = true
-        
         return self
     }
     
     @discardableResult
-    public func centerY(by target: UIView? = nil, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+    public func centerY(by target: UIView? = nil, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         removeVerticalConstraints()
         
         let targetView = target != nil ? target! : view.superview
-        
-        constraints.centerY = NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: targetView, attribute: .centerY, multiplier: 1.0, constant: constant)
+        constraints.centerY = NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: targetView, attribute: .centerY, multiplier: multiplier, constant: constant)
         constraints.centerY?.isActive = true
-        
         return self
     }
     
@@ -87,10 +79,8 @@ open class SimpleLayoutObject: NSObject {
         removeTrailing()
         
         let targetView = target != nil ? target! : view.superview
-        
-        constraints.trailing = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: relation, toItem: targetView, attribute: attribute, multiplier: 1.0, constant: constant)
+        constraints.trailing = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: relation, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
         constraints.trailing?.isActive = true
-        
         return self
     }
     
@@ -121,15 +111,12 @@ open class SimpleLayoutObject: NSObject {
         }
         
         let targetView = target != nil ? target! : view.superview
-        
         if fixed > -1 {
             constraints.height = NSLayoutConstraint(item: view, attribute: .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: multiplier, constant: fixed)
         } else {
             constraints.height = NSLayoutConstraint(item: view, attribute: .height, relatedBy: relation, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
         }
-        
         constraints.height?.isActive = true
-        
         return self
     }
     
@@ -138,10 +125,8 @@ open class SimpleLayoutObject: NSObject {
         removeLeading()
         
         let targetView = target != nil ? target! : view.superview
-        
         constraints.leading = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: relation, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
         constraints.leading?.isActive = true
-        
         return self
     }
     
@@ -150,10 +135,8 @@ open class SimpleLayoutObject: NSObject {
         removeTop()
         
         let targetView = target != nil ? target! : view.superview
-        
         constraints.top = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
         constraints.top?.isActive = true
-        
         return self
     }
     
@@ -165,15 +148,12 @@ open class SimpleLayoutObject: NSObject {
         }
         
         let targetView = target != nil ? target! : view.superview
-        
         if fixed > -1 {
             constraints.width = NSLayoutConstraint(item: view, attribute: .width, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: multiplier, constant: fixed)
         } else {
             constraints.width = NSLayoutConstraint(item: view, attribute: .width, relatedBy: relation, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
         }
-        
         constraints.width?.isActive = true
-        
         return self
     }
     
