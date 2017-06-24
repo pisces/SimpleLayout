@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SimpleLayout'
+  s.name             = 'SimpleLayout-Swift'
   s.version          = '1.0.0'
   s.summary          = 'SimpleLayout helps you to using auto layout very easily'
 
