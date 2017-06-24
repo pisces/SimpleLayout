@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2305F39F1EFE3204008AF34C /* SimpleLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2305F3911EFE3204008AF34C /* SimpleLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2305F3B11EFE324F008AF34C /* SimpleLayoutGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305F3AC1EFE324F008AF34C /* SimpleLayoutGlobal.swift */; };
-		2305F3B21EFE324F008AF34C /* SimpleLayoutObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305F3AD1EFE324F008AF34C /* SimpleLayoutObject.swift */; };
-		2305F3B31EFE324F008AF34C /* UIView+SimpleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305F3AE1EFE324F008AF34C /* UIView+SimpleLayout.swift */; };
+		2305F3BD1EFE48AB008AF34C /* SimpleLayoutGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305F3BA1EFE48AB008AF34C /* SimpleLayoutGlobal.swift */; };
+		2305F3BE1EFE48AB008AF34C /* SimpleLayoutObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305F3BB1EFE48AB008AF34C /* SimpleLayoutObject.swift */; };
+		2305F3BF1EFE48AB008AF34C /* UIView+SimpleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305F3BC1EFE48AB008AF34C /* UIView+SimpleLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2305F38E1EFE3204008AF34C /* SimpleLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2305F3911EFE3204008AF34C /* SimpleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleLayout.h; sourceTree = "<group>"; };
 		2305F3921EFE3204008AF34C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2305F3AC1EFE324F008AF34C /* SimpleLayoutGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLayoutGlobal.swift; sourceTree = "<group>"; };
-		2305F3AD1EFE324F008AF34C /* SimpleLayoutObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLayoutObject.swift; sourceTree = "<group>"; };
-		2305F3AE1EFE324F008AF34C /* UIView+SimpleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SimpleLayout.swift"; sourceTree = "<group>"; };
+		2305F3BA1EFE48AB008AF34C /* SimpleLayoutGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleLayoutGlobal.swift; path = Classes/SimpleLayoutGlobal.swift; sourceTree = "<group>"; };
+		2305F3BB1EFE48AB008AF34C /* SimpleLayoutObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleLayoutObject.swift; path = Classes/SimpleLayoutObject.swift; sourceTree = "<group>"; };
+		2305F3BC1EFE48AB008AF34C /* UIView+SimpleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+SimpleLayout.swift"; path = "Classes/UIView+SimpleLayout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,29 +52,13 @@
 		2305F3901EFE3204008AF34C /* SimpleLayout */ = {
 			isa = PBXGroup;
 			children = (
-				2305F3A81EFE324F008AF34C /* Assets */,
-				2305F3AA1EFE324F008AF34C /* Classes */,
+				2305F3BA1EFE48AB008AF34C /* SimpleLayoutGlobal.swift */,
+				2305F3BB1EFE48AB008AF34C /* SimpleLayoutObject.swift */,
+				2305F3BC1EFE48AB008AF34C /* UIView+SimpleLayout.swift */,
 				2305F3911EFE3204008AF34C /* SimpleLayout.h */,
 				2305F3921EFE3204008AF34C /* Info.plist */,
 			);
 			path = SimpleLayout;
-			sourceTree = "<group>";
-		};
-		2305F3A81EFE324F008AF34C /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		2305F3AA1EFE324F008AF34C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				2305F3AC1EFE324F008AF34C /* SimpleLayoutGlobal.swift */,
-				2305F3AD1EFE324F008AF34C /* SimpleLayoutObject.swift */,
-				2305F3AE1EFE324F008AF34C /* UIView+SimpleLayout.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +106,7 @@
 					2305F38D1EFE3204008AF34C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = Z2MHWT9TNN;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -158,9 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2305F3B21EFE324F008AF34C /* SimpleLayoutObject.swift in Sources */,
-				2305F3B31EFE324F008AF34C /* UIView+SimpleLayout.swift in Sources */,
-				2305F3B11EFE324F008AF34C /* SimpleLayoutGlobal.swift in Sources */,
+				2305F3BE1EFE48AB008AF34C /* SimpleLayoutObject.swift in Sources */,
+				2305F3BF1EFE48AB008AF34C /* UIView+SimpleLayout.swift in Sources */,
+				2305F3BD1EFE48AB008AF34C /* SimpleLayoutGlobal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +256,7 @@
 		2305F3A31EFE3204008AF34C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Z2MHWT9TNN;
@@ -284,6 +270,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pisces.lib.SimpleLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -291,6 +278,7 @@
 		2305F3A41EFE3204008AF34C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Z2MHWT9TNN;
