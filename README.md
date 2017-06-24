@@ -3,9 +3,9 @@
 SimpleLayout helps you to using auto layout very easily
 
 [![CI Status](http://img.shields.io/travis/pisces/SimpleLayout.svg?style=flat)](https://travis-ci.org/pisces/SimpleLayout)
-[![Version](https://img.shields.io/cocoapods/v/SimpleLayout.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
-[![License](https://img.shields.io/cocoapods/l/SimpleLayout.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
-[![Platform](https://img.shields.io/cocoapods/p/SimpleLayout.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
+[![Version](https://img.shields.io/cocoapods/v/SimpleLayout-Swift.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
+[![License](https://img.shields.io/cocoapods/l/SimpleLayout-Swift.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
+[![Platform](https://img.shields.io/cocoapods/p/SimpleLayout-Swift.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Example
