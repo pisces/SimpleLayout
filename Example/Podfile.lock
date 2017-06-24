@@ -1,16 +1,16 @@
 PODS:
-  - SimpleLayout (0.1.0)
+  - SimpleLayout-Swift (1.0.0)
 
 DEPENDENCIES:
-  - SimpleLayout (from `../`)
+  - SimpleLayout-Swift (from `../`)
 
 EXTERNAL SOURCES:
-  SimpleLayout:
+  SimpleLayout-Swift:
     :path: ../
 
 SPEC CHECKSUMS:
-  SimpleLayout: 5d2379223b6c4e9d9d71c34ff23f06ec1ee46128
+  SimpleLayout-Swift: 240355363e01df1b9afb6dffb78b04cbec015a3c
 
-PODFILE CHECKSUM: d9775c359133eddb1540c3777d427fb9879bac91
+PODFILE CHECKSUM: 0909b023abc0916cf112668adfedbdc8ed296598
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.1

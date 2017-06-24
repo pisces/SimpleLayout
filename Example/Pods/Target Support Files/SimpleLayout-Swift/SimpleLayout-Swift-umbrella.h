@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SimpleLayoutVersionNumber;
-FOUNDATION_EXPORT const unsigned char SimpleLayoutVersionString[];
+FOUNDATION_EXPORT double SimpleLayout_SwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char SimpleLayout_SwiftVersionString[];
 
