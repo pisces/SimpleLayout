@@ -17,7 +17,7 @@ public extension UIView {
     
     // MARK: - Properties
     
-    public private(set) var layout: SimpleLayoutObject! {
+    private(set) public var layout: SimpleLayoutObject! {
         get {
             if let layout: SimpleLayoutObject? = getAssociatedObject(self, associativeKey: &AssociatedKeys.LayoutName) {
                 return layout
@@ -33,16 +33,13 @@ public extension UIView {
             setAssociatedObject(self, value: value, associativeKey: &AssociatedKeys.LayoutName, policy: objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    
-    var right: CGFloat {
+    public var right: CGFloat {
         return self.frame.maxX
     }
-    
-    var bottom: CGFloat {
+    public var bottom: CGFloat {
         return self.frame.maxY
     }
-    
-    var x: CGFloat {
+    public var x: CGFloat {
         get {
             return self.frame.minX
         }
@@ -50,8 +47,7 @@ public extension UIView {
             self.frame = CGRect(x: value, y: frameOrigin.y, width: frameSize.width, height: frameSize.height)
         }
     }
-    
-    var y: CGFloat {
+    public var y: CGFloat {
         get {
             return self.frame.minY
         }
@@ -59,8 +55,7 @@ public extension UIView {
             self.frame = CGRect(x: frameOrigin.x, y: value, width: frameSize.width, height: frameSize.height)
         }
     }
-    
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
             return self.frame.height
         }
@@ -68,8 +63,7 @@ public extension UIView {
             self.frame = CGRect(x: frameOrigin.x, y: frameOrigin.y, width: frameSize.width, height: value)
         }
     }
-    
-    var width: CGFloat {
+    public var width: CGFloat {
         get {
             return self.frame.width
         }
@@ -77,8 +71,7 @@ public extension UIView {
             self.frame = CGRect(x: frameOrigin.x, y: frameOrigin.y, width: value, height: frameSize.height)
         }
     }
-    
-    var frameOrigin: CGPoint {
+    public var frameOrigin: CGPoint {
         get {
             return self.frame.origin
         }
@@ -86,8 +79,7 @@ public extension UIView {
             self.frame = CGRect(x: value.x, y: value.y, width: self.frame.size.width, height: self.frame.size.height)
         }
     }
-    
-    var frameSize: CGSize {
+    public var frameSize: CGSize {
         get {
             return self.frame.size
         }
