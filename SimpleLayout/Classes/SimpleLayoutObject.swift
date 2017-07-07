@@ -13,7 +13,7 @@ public class SimpleLayoutObject: NSObject {
     
     // MARK: - Properties
     
-    private var view: UIView!
+    private weak var view: UIView!
     
     private(set) public var constraints = NSLayoutConstraints()
     
