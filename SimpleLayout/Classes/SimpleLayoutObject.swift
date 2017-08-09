@@ -147,48 +147,63 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     
-    // MARK: - Private methods
+    // MARK: - Remove constraint
     
-    private func removeBottom() {
+    @discardableResult
+    public func removeBottom() -> SimpleLayoutObject {
         if let bottom = constraints.bottom {
             view.superview?.removeConstraint(bottom)
             constraints.bottom = nil
         }
+        return self
     }
-    private func removeCenterX() {
+    @discardableResult
+    public func removeCenterX() -> SimpleLayoutObject {
         if let centerX = constraints.centerX {
             view.superview?.removeConstraint(centerX)
             constraints.centerX = nil
         }
+        return self
     }
-    private func removeCenterY() {
+    @discardableResult
+    public func removeCenterY() -> SimpleLayoutObject {
         if let centerY = constraints.centerY {
             view.superview?.removeConstraint(centerY)
             constraints.centerY = nil
         }
+        return self
     }
-    private func removeHorizontalConstraints() {
-        removeLeading()
-        removeTrailing()
-        removeCenterX()
-    }
-    private func removeLeading() {
+    @discardableResult
+    public func removeLeading() -> SimpleLayoutObject {
         if let leading = constraints.leading {
             view.superview?.removeConstraint(leading)
             constraints.leading = nil
         }
+        return self
     }
-    private func removeTop() {
+    @discardableResult
+    public func removeTop() -> SimpleLayoutObject {
         if let top = constraints.top {
             view.superview?.removeConstraint(top)
             constraints.top = nil
         }
+        return self
     }
-    private func removeTrailing() {
+    @discardableResult
+    public func removeTrailing() -> SimpleLayoutObject {
         if let trailing = constraints.trailing {
             view.superview?.removeConstraint(trailing)
             constraints.trailing = nil
         }
+        return self
+    }
+    
+    // MARK: - Private methods
+    
+    private func removeHorizontalConstraints() {
+        removeLeading()
+        removeTrailing()
+        removeCenterX()
     }
     private func removeVerticalConstraints() {
         removeTop()
