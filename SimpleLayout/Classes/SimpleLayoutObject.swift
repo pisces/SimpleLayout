@@ -35,7 +35,6 @@ public class SimpleLayoutObject: NSObject {
     @discardableResult
     public func bottom(by target: UIView? = nil, attribute: NSLayoutAttribute = .bottom, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         removeBottom()
-        removeCenterY()
         
         let targetView = target != nil ? target! : view.superview
         constraints.bottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
@@ -73,7 +72,6 @@ public class SimpleLayoutObject: NSObject {
     @discardableResult
     public func trailing(by target: UIView? = nil, attribute: NSLayoutAttribute = .trailing, relation: NSLayoutRelation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         removeTrailing()
-        removeCenterX()
         
         let targetView = target != nil ? target! : view.superview
         constraints.trailing = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: relation, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
@@ -117,7 +115,6 @@ public class SimpleLayoutObject: NSObject {
     @discardableResult
     public func leading(by target: UIView? = nil, attribute: NSLayoutAttribute = .leading, relation: NSLayoutRelation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         removeLeading()
-        removeCenterX()
         
         let targetView = target != nil ? target! : view.superview
         constraints.leading = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: relation, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
@@ -127,7 +124,6 @@ public class SimpleLayoutObject: NSObject {
     @discardableResult
     public func top(by target: UIView? = nil, attribute: NSLayoutAttribute = .top, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         removeTop()
-        removeCenterY()
         
         let targetView = target != nil ? target! : view.superview
         constraints.top = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: targetView, attribute: attribute, multiplier: multiplier, constant: constant)
