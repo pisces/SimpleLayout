@@ -11,7 +11,6 @@
 		350B262C94A26A0A8DEAFBAC2A115F7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		4AE5D796FA028AB6BDA10B769F3F0BC4 /* Pods-SimpleLayout_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FE5B4C9BD7D7A7C441ACF73ECE5628 /* Pods-SimpleLayout_Example-dummy.m */; };
 		5A809A7165508CBAEFC9928FAEC47DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		869B95855A5997FBC7A93FAEB0C0355F /* SimpleLayoutGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88FD607EDF2924C30C0CB4D1DBBCC7F /* SimpleLayoutGlobal.swift */; };
 		A139E5862AB0DBA23CAF2BDF92CCBFBA /* UIView+SimpleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26702FEB1A2AF05D2CB6C12DB63362E7 /* UIView+SimpleLayout.swift */; };
 		A297DD6149F65F48267B067B4E77CFCC /* SimpleLayout-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4787C360A116231F823883C745D0ED /* SimpleLayout-Swift-dummy.m */; };
 		A592E7D31542912131BC415DE9E964D4 /* Pods-SimpleLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CC455305E52C034D8A1187046D60DA /* Pods-SimpleLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,7 +33,7 @@
 /* Begin PBXFileReference section */
 		01316B9ADB3AD5B0AE03ECB19C9889DE /* Pods-SimpleLayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleLayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		11F615E252FC01D2078C41A516954D78 /* Pods-SimpleLayout_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleLayout_Example-frameworks.sh"; sourceTree = "<group>"; };
-		21A1929522AF45C769DE0D4A746103B6 /* Pods-SimpleLayout_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleLayout_Tests.modulemap"; sourceTree = "<group>"; };
+		21A1929522AF45C769DE0D4A746103B6 /* Pods-SimpleLayout_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SimpleLayout_Tests.modulemap"; sourceTree = "<group>"; };
 		22CC455305E52C034D8A1187046D60DA /* Pods-SimpleLayout_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleLayout_Example-umbrella.h"; sourceTree = "<group>"; };
 		26702FEB1A2AF05D2CB6C12DB63362E7 /* UIView+SimpleLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+SimpleLayout.swift"; sourceTree = "<group>"; };
 		2928606C02B0D80377965B17D9642C9A /* SimpleLayout-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleLayout-Swift-prefix.pch"; sourceTree = "<group>"; };
@@ -43,17 +42,17 @@
 		3FFE55B7F016AACE40DABFEC03ADF6A7 /* Pods-SimpleLayout_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleLayout_Tests-umbrella.h"; sourceTree = "<group>"; };
 		47FE5B4C9BD7D7A7C441ACF73ECE5628 /* Pods-SimpleLayout_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleLayout_Example-dummy.m"; sourceTree = "<group>"; };
 		58DCBB325269EDB3D28E58BDD094463C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59F153BFC6441E0856279CD8F3753CF4 /* Pods_SimpleLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleLayout_Tests.framework; path = "Pods-SimpleLayout_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F153BFC6441E0856279CD8F3753CF4 /* Pods_SimpleLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2A7660E94C43983D4CD73F6D1FFEC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EDFB4F844401E2CD20592077B52D534 /* SimpleLayout-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "SimpleLayout-Swift.modulemap"; sourceTree = "<group>"; };
+		5EDFB4F844401E2CD20592077B52D534 /* SimpleLayout-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "SimpleLayout-Swift.modulemap"; sourceTree = "<group>"; };
 		63A3A25EAA47F5D1BFEFCA66F0B919E7 /* Pods-SimpleLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6A70B0B45E6F0B6535607D63438642C2 /* Pods-SimpleLayout_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleLayout_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		71D05093DD74B57527C81D1248CC0A35 /* Pods_SimpleLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleLayout_Example.framework; path = "Pods-SimpleLayout_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D05093DD74B57527C81D1248CC0A35 /* Pods_SimpleLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F57C28D434A4CDE40C8CFE75C252440 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B5FEFA877CFC7DA9655BA14F7A4FC2 /* Pods-SimpleLayout_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleLayout_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8D0E13737917F3561744C97B761EE002 /* SimpleLayoutObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleLayoutObject.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		956BE7D6D270C9414EB31653DA584BB6 /* Pods-SimpleLayout_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleLayout_Tests-dummy.m"; sourceTree = "<group>"; };
 		A6A645BC751D21B945AA4069F777E67B /* SimpleLayout-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleLayout-Swift-umbrella.h"; sourceTree = "<group>"; };
 		AC836A011C78A1A6BBAAB5E8C5ACB031 /* Pods-SimpleLayout_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleLayout_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -61,10 +60,9 @@
 		BD4787C360A116231F823883C745D0ED /* SimpleLayout-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimpleLayout-Swift-dummy.m"; sourceTree = "<group>"; };
 		C2A27F02302B58B1FCBBEC6099D514C8 /* Pods-SimpleLayout_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleLayout_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C84EEEAE58C7325C06ECFCC8313B512A /* SimpleLayout-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SimpleLayout-Swift.xcconfig"; sourceTree = "<group>"; };
-		C88FD607EDF2924C30C0CB4D1DBBCC7F /* SimpleLayoutGlobal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleLayoutGlobal.swift; sourceTree = "<group>"; };
 		CAF20E6022B3BC5DC0E22C607F472BB9 /* Pods-SimpleLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D6080F6E2F31681880BC1AEBBB6CBEB7 /* Pods-SimpleLayout_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleLayout_Example.modulemap"; sourceTree = "<group>"; };
-		EA7C6D45656CE3E5B069133ABDD106C7 /* SimpleLayout_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SimpleLayout_Swift.framework; path = "SimpleLayout-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6080F6E2F31681880BC1AEBBB6CBEB7 /* Pods-SimpleLayout_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SimpleLayout_Example.modulemap"; sourceTree = "<group>"; };
+		EA7C6D45656CE3E5B069133ABDD106C7 /* SimpleLayout_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleLayout_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F141BEE1B13E2015C9E9D0584E1502AC /* Pods-SimpleLayout_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleLayout_Example-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +131,6 @@
 			children = (
 				C8AF6970FCBDEB4B7DD64AEB7642F0B1 /* Classes */,
 			);
-			name = SimpleLayout;
 			path = SimpleLayout;
 			sourceTree = "<group>";
 		};
@@ -196,11 +193,9 @@
 		C8AF6970FCBDEB4B7DD64AEB7642F0B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C88FD607EDF2924C30C0CB4D1DBBCC7F /* SimpleLayoutGlobal.swift */,
 				8D0E13737917F3561744C97B761EE002 /* SimpleLayoutObject.swift */,
 				26702FEB1A2AF05D2CB6C12DB63362E7 /* UIView+SimpleLayout.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -362,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A297DD6149F65F48267B067B4E77CFCC /* SimpleLayout-Swift-dummy.m in Sources */,
-				869B95855A5997FBC7A93FAEB0C0355F /* SimpleLayoutGlobal.swift in Sources */,
 				FF8A09495B892138C56C9BED6389DCBB /* SimpleLayoutObject.swift in Sources */,
 				A139E5862AB0DBA23CAF2BDF92CCBFBA /* UIView+SimpleLayout.swift in Sources */,
 			);

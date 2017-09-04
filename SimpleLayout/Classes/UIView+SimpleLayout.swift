@@ -9,6 +9,7 @@
 import UIKit
 
 public extension UIView {
+    
     // MARK: - Struct
     
     private struct AssociatedKeys {
@@ -17,74 +18,73 @@ public extension UIView {
     
     // MARK: - Properties
     
-    private(set) public var layout: SimpleLayoutObject! {
+    private(set) public var layout: SimpleLayoutObject {
         get {
-            if let layout: SimpleLayoutObject? = getAssociatedObject(self, associativeKey: &AssociatedKeys.LayoutName) {
+            if let layout = objc_getAssociatedObject(self, &AssociatedKeys.LayoutName) as? SimpleLayoutObject {
                 return layout
             }
-            
-            self.translatesAutoresizingMaskIntoConstraints = false
+            translatesAutoresizingMaskIntoConstraints = false
             
             let layout = SimpleLayoutObject(view: self)
-            setAssociatedObject(self, value: layout, associativeKey: &AssociatedKeys.LayoutName, policy: objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.LayoutName, layout, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return layout
         }
         set(value) {
-            setAssociatedObject(self, value: value, associativeKey: &AssociatedKeys.LayoutName, policy: objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.LayoutName, layout, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     public var right: CGFloat {
-        return self.frame.maxX
+        return frame.maxX
     }
     public var bottom: CGFloat {
-        return self.frame.maxY
+        return frame.maxY
     }
     public var x: CGFloat {
         get {
-            return self.frame.minX
+            return frame.minX
         }
         set(value) {
-            self.frame = CGRect(x: value, y: frameOrigin.y, width: frameSize.width, height: frameSize.height)
+            frame = CGRect(x: value, y: frameOrigin.y, width: frameSize.width, height: frameSize.height)
         }
     }
     public var y: CGFloat {
         get {
-            return self.frame.minY
+            return frame.minY
         }
         set(value) {
-            self.frame = CGRect(x: frameOrigin.x, y: value, width: frameSize.width, height: frameSize.height)
+            frame = CGRect(x: frameOrigin.x, y: value, width: frameSize.width, height: frameSize.height)
         }
     }
     public var height: CGFloat {
         get {
-            return self.frame.height
+            return frame.height
         }
         set(value) {
-            self.frame = CGRect(x: frameOrigin.x, y: frameOrigin.y, width: frameSize.width, height: value)
+            frame = CGRect(x: frameOrigin.x, y: frameOrigin.y, width: frameSize.width, height: value)
         }
     }
     public var width: CGFloat {
         get {
-            return self.frame.width
+            return frame.width
         }
         set(value) {
-            self.frame = CGRect(x: frameOrigin.x, y: frameOrigin.y, width: value, height: frameSize.height)
+            frame = CGRect(x: frameOrigin.x, y: frameOrigin.y, width: value, height: frameSize.height)
         }
     }
     public var frameOrigin: CGPoint {
         get {
-            return self.frame.origin
+            return frame.origin
         }
         set(value) {
-            self.frame = CGRect(x: value.x, y: value.y, width: self.frame.size.width, height: self.frame.size.height)
+            frame = CGRect(x: value.x, y: value.y, width: frame.size.width, height: frame.size.height)
         }
     }
     public var frameSize: CGSize {
         get {
-            return self.frame.size
+            return frame.size
         }
         set(value) {
-            self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: value.width, height: value.height)
+            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: value.width, height: value.height)
         }
     }
 }
