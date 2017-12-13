@@ -36,6 +36,15 @@ view.layout
     .height(fixed: 30)
 ```
 
+### Using SafeAreaLayoutGuide for iPhone X (iOS 11 or higher)
+```Swift
+view.layout
+    .top(by: view._safeAreaLayoutGuide)
+    .leading()
+    .trailing()
+    .bottom(by: view._safeAreaLayoutGuide)
+```
+
 ### To implement auto layout using the fill method
 <p valign="top">
 <img src="Screenshot/sh_01.png" width="320"/>
@@ -43,7 +52,7 @@ view.layout
 
 ```Swift
 import UIKit
-import SimpleLayout
+import SimpleLayout_Swift
 
 class FillExampleViewController: UIViewController {
     
@@ -67,14 +76,13 @@ class FillExampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.edgesForExtendedLayout = .bottom
+        edgesForExtendedLayout = .bottom
         
         let label = UILabel()
         label.text = "view"
         
-        self.view.addSubview(label)
-        self.view.addSubview(subview)
-
+        view.addSubview(label)
+        view.addSubview(subview)
         label.layout
             .leading()
             .top()
@@ -92,22 +100,22 @@ class FillExampleViewController: UIViewController {
 
 ```Swift
 import UIKit
-import SimpleLayout
+import SimpleLayout_Swift
 
 class ChainExampleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.edgesForExtendedLayout = .bottom
+        edgesForExtendedLayout = .bottom
         
         let subview1 = label(backgroundColor: .red, text: "subview1")
         let subview2 = label(backgroundColor: .purple, text: "subview2")
         let subview3 = label(backgroundColor: .blue, text: "subview3")
         
-        self.view.addSubview(subview1)
-        self.view.addSubview(subview2)
-        self.view.addSubview(subview3)
+        view.addSubview(subview1)
+        view.addSubview(subview2)
+        view.addSubview(subview3)
         
         subview1.layout
             .leading()
@@ -117,13 +125,13 @@ class ChainExampleViewController: UIViewController {
         subview2.layout
             .leading(by: subview1)
             .top(by: subview1, attribute: .bottom)
-            .width(fixed: self.view.width/2)
+            .width(fixed: view.width/2)
             .bottom()
         subview3.layout
             .leading(by: subview2, attribute: .trailing)
             .top(by: subview2)
             .trailing()
-            .bottom()
+            .bottom(by: view.layout.safeAreaLayoutGuide?.bottomAnchor)
     }
     
     private func label(backgroundColor: UIColor, text: String) -> UILabel {
@@ -139,7 +147,7 @@ class ChainExampleViewController: UIViewController {
 
 ## Requirements
 
-iOS SDK 8.0 equal or higher
+iOS SDK 9.0 equal or higher
 
 ## Installation
 
@@ -164,7 +172,7 @@ $ brew install carthage
 To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "pisces/SimpleLayout" ~> 1.0.0
+github "pisces/SimpleLayout" ~> 1.0.1
 ```
 
 Run `carthage update` to build the framework and drag the built `SimpleLayout.framework` into your Xcode project.

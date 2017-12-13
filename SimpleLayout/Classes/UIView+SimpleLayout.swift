@@ -87,4 +87,16 @@ public extension UIView {
             frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: value.width, height: value.height)
         }
     }
+    public var _safeAreaInsets: UIEdgeInsets {
+        if #available(iOS 11, *) {
+            return safeAreaInsets
+        }
+        return .zero
+    }
+    public var _safeAreaLayoutGuide: UILayoutGuide? {
+        if #available(iOS 11, *) {
+            return safeAreaLayoutGuide
+        }
+        return nil
+    }
 }

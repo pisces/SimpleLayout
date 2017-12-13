@@ -1,8 +1,8 @@
 {
   "name": "SimpleLayout-Swift",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "SimpleLayout helps you to using auto layout very easily",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "SimpleLayout helps you to using auto layout very easily",
   "homepage": "https://github.com/pisces/SimpleLayout",
   "license": {
     "type": "MIT",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/pisces/SimpleLayout.git",
-    "tag": "1.0.0"
+    "tag": "1.0.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "SimpleLayout/Classes/**/*"
 }

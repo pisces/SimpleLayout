@@ -31,13 +31,13 @@ class FillExampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.edgesForExtendedLayout = .bottom
+        edgesForExtendedLayout = .bottom
         
         let label = UILabel()
         label.text = "view"
         
-        self.view.addSubview(label)
-        self.view.addSubview(subview)
+        view.addSubview(label)
+        view.addSubview(subview)
         label.layout
             .leading()
             .top()
@@ -46,3 +46,4 @@ class FillExampleViewController: UIViewController {
         subview.layout.fill(leading: 30, top: 30, trailing: -30, bottom: -30)
     }
 }
+

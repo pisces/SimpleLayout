@@ -18,45 +18,38 @@ class ViewController: UITableViewController {
     ]
     
     // MARK: - Overridden: UITableViewController
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.edgesForExtendedLayout = .bottom
-        self.title = "SimpleLayout Example"
-        self.navigationController?.view.backgroundColor = .white
+        edgesForExtendedLayout = .bottom
+        title = "SimpleLayout Example"
+        navigationController?.view.backgroundColor = .white
     }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "UITableViewCell"
-        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier)
-        
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
             cell?.accessoryType = .disclosureIndicator
         }
-        
         return cell!
     }
-    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = items[indexPath.row]
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let controller = self.controller(forRowAt: indexPath)
         controller.title = items[indexPath.row]
-        self.navigationController?.pushViewController(controller, animated: true)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Private methods
@@ -71,4 +64,3 @@ class ViewController: UITableViewController {
         return UIViewController()
     }
 }
-

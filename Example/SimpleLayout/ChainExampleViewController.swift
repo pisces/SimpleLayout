@@ -14,32 +14,31 @@ class ChainExampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.edgesForExtendedLayout = .bottom
+        edgesForExtendedLayout = .bottom
         
         let subview1 = label(backgroundColor: .red, text: "subview1")
         let subview2 = label(backgroundColor: .purple, text: "subview2")
         let subview3 = label(backgroundColor: .blue, text: "subview3")
         
-        self.view.addSubview(subview1)
-        self.view.addSubview(subview2)
-        self.view.addSubview(subview3)
+        view.addSubview(subview1)
+        view.addSubview(subview2)
+        view.addSubview(subview3)
         
         subview1.layout
             .leading()
             .top()
-            .width()
+            .trailing()
             .height(fixed: 150)
         subview2.layout
             .leading(by: subview1)
             .top(by: subview1, attribute: .bottom)
-            .width(fixed: self.view.width/2)
-            .bottom()
+            .width(fixed: view.width/2)
+            .bottom(by: view._safeAreaLayoutGuide)
         subview3.layout
             .leading(by: subview2, attribute: .trailing)
             .top(by: subview2)
-            .trailing()
-            .bottom()
-        subview2.layout.constraints.width?.constant = 0
+            .trailing(by: subview1)
+            .bottom(by: subview2)
     }
     
     private func label(backgroundColor: UIColor, text: String) -> UILabel {
@@ -51,3 +50,4 @@ class ChainExampleViewController: UIViewController {
         return label
     }
 }
+
