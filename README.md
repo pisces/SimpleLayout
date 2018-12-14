@@ -20,7 +20,7 @@ let top = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toI
 let trailing = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 10)
 let width = NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
 let height = NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
-            
+
 view.addConstraints([width, height])
 view.layoutIfNeeded()
 self.addConstraints([top, trailing])
@@ -55,15 +55,15 @@ import UIKit
 import SimpleLayout_Swift
 
 class FillExampleViewController: UIViewController {
-    
+
     private lazy var subview: UIView = {
         let label = UILabel()
         label.text = "subview"
         label.textColor = .white
-        
+
         let subview = UIView()
         subview.backgroundColor = .red
-        
+
         subview.addSubview(label)
         label.layout
             .leading()
@@ -72,15 +72,15 @@ class FillExampleViewController: UIViewController {
             .height(fixed: 0, relation: .greaterThanOrEqual)
         return subview
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         edgesForExtendedLayout = .bottom
-        
+
         let label = UILabel()
         label.text = "view"
-        
+
         view.addSubview(label)
         view.addSubview(subview)
         label.layout
@@ -103,20 +103,20 @@ import UIKit
 import SimpleLayout_Swift
 
 class ChainExampleViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         edgesForExtendedLayout = .bottom
-        
+
         let subview1 = label(backgroundColor: .red, text: "subview1")
         let subview2 = label(backgroundColor: .purple, text: "subview2")
         let subview3 = label(backgroundColor: .blue, text: "subview3")
-        
+
         view.addSubview(subview1)
         view.addSubview(subview2)
         view.addSubview(subview3)
-        
+
         subview1.layout
             .leading()
             .top()
@@ -133,7 +133,7 @@ class ChainExampleViewController: UIViewController {
             .trailing()
             .bottom(by: view.layout.safeAreaLayoutGuide?.bottomAnchor)
     }
-    
+
     private func label(backgroundColor: UIColor, text: String) -> UILabel {
         let label = UILabel()
         label.backgroundColor = backgroundColor
@@ -172,7 +172,7 @@ $ brew install carthage
 To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "pisces/SimpleLayout" ~> 1.0.1
+github "pisces/SimpleLayout" ~> 1.0.2
 ```
 
 Run `carthage update` to build the framework and drag the built `SimpleLayout.framework` into your Xcode project.
