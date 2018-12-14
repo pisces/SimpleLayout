@@ -131,7 +131,7 @@ class ChainExampleViewController: UIViewController {
             .leading(by: subview2, attribute: .trailing)
             .top(by: subview2)
             .trailing()
-            .bottom(by: view.layout.safeAreaLayoutGuide?.bottomAnchor)
+            .bottom(by: view.layout.safeAreaLayoutGuide)
     }
 
     private func label(backgroundColor: UIColor, text: String) -> UILabel {
