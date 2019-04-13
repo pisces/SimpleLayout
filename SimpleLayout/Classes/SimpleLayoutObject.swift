@@ -7,6 +7,8 @@
 //      - Support iOS 11 and higher
 //  Modified by pisces on 4/12/2018.
 //      - Add priority to NSLayoutConstraint
+//  Modified by pisces on 4/6/2019.
+//      - Remove constraint if it is equal to origin when set the new constraint.
 //  Copyright © 2016 Steve Kim. All rights reserved.
 //
 //
@@ -38,9 +40,12 @@ public class SimpleLayoutObject: NSObject {
     
     @discardableResult
     public func bottom(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .bottom, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
-        removeBottom()
+        let item = toItem(with: target)
+        let new = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
-        constraints.bottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: toItem(with: target), attribute: attribute, multiplier: multiplier, constant: constant)
+        removeBottom(with: new)
+        
+        constraints.bottom = new
         constraints.bottom?.priority = priority
         constraints.bottom?.isActive = true
         return self
@@ -57,27 +62,36 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func centerX(by target: Any? = nil, priority: UILayoutPriority = .required, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
-        removeHorizontalConstraints()
+        let item = toItem(with: target)
+        let new = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: item, attribute: .centerX, multiplier: multiplier, constant: constant)
         
-        constraints.centerX = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: toItem(with: target), attribute: .centerX, multiplier: multiplier, constant: constant)
+        removeHorizontalConstraints(with: new)
+        
+        constraints.centerX = new
         constraints.centerX?.priority = priority
         constraints.centerX?.isActive = true
         return self
     }
     @discardableResult
     public func centerY(by target: Any? = nil, priority: UILayoutPriority = .required, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
-        removeVerticalConstraints()
+        let item = toItem(with: target)
+        let new = NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: item, attribute: .centerY, multiplier: multiplier, constant: constant)
         
-        constraints.centerY = NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: toItem(with: target), attribute: .centerY, multiplier: multiplier, constant: constant)
+        removeVerticalConstraints(with: new)
+        
+        constraints.centerY = new
         constraints.centerY?.priority = priority
         constraints.centerY?.isActive = true
         return self
     }
     @discardableResult
     public func trailing(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .trailing, relation: NSLayoutRelation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
-        removeTrailing()
+        let item = toItem(with: target)
+        let new = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: relation, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
-        constraints.trailing = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: relation, toItem: toItem(with: target), attribute: attribute, multiplier: multiplier, constant: constant)
+        removeTrailing(with: new)
+        
+        constraints.trailing = new
         constraints.trailing?.priority = priority
         constraints.trailing?.isActive = true
         return self
@@ -118,18 +132,24 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func leading(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .leading, relation: NSLayoutRelation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
-        removeLeading()
+        let item = toItem(with: target)
+        let new = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: relation, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
-        constraints.leading = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: relation, toItem: toItem(with: target), attribute: attribute, multiplier: multiplier, constant: constant)
+        removeLeading(with: new)
+        
+        constraints.leading = new
         constraints.leading?.priority = priority
         constraints.leading?.isActive = true
         return self
     }
     @discardableResult
     public func top(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .top, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
-        removeTop()
+        let item = toItem(with: target)
+        let new = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
-        constraints.top = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: toItem(with: target), attribute: attribute, multiplier: multiplier, constant: constant)
+        removeTop(with: new)
+        
+        constraints.top = new
         constraints.top?.priority = priority
         constraints.top?.isActive = true
         return self
@@ -154,49 +174,43 @@ public class SimpleLayoutObject: NSObject {
     // MARK: - Remove constraint
     
     @discardableResult
-    public func removeBottom() -> SimpleLayoutObject {
-        if let bottom = constraints.bottom {
-            view.superview?.removeConstraint(bottom)
+    public func removeBottom(with new: NSLayoutConstraint? = nil) -> SimpleLayoutObject {
+        if removeConstraint(constraints.bottom, new: new) {
             constraints.bottom = nil
         }
         return self
     }
     @discardableResult
-    public func removeCenterX() -> SimpleLayoutObject {
-        if let centerX = constraints.centerX {
-            view.superview?.removeConstraint(centerX)
+    public func removeCenterX(with new: NSLayoutConstraint? = nil) -> SimpleLayoutObject {
+        if removeConstraint(constraints.centerX, new: new) {
             constraints.centerX = nil
         }
         return self
     }
     @discardableResult
-    public func removeCenterY() -> SimpleLayoutObject {
-        if let centerY = constraints.centerY {
-            view.superview?.removeConstraint(centerY)
+    public func removeCenterY(with new: NSLayoutConstraint? = nil) -> SimpleLayoutObject {
+        if removeConstraint(constraints.centerY, new: new) {
             constraints.centerY = nil
         }
         return self
     }
     @discardableResult
-    public func removeLeading() -> SimpleLayoutObject {
-        if let leading = constraints.leading {
-            view.superview?.removeConstraint(leading)
+    public func removeLeading(with new: NSLayoutConstraint? = nil) -> SimpleLayoutObject {
+        if removeConstraint(constraints.leading, new: new) {
             constraints.leading = nil
         }
         return self
     }
     @discardableResult
-    public func removeTop() -> SimpleLayoutObject {
-        if let top = constraints.top {
-            view.superview?.removeConstraint(top)
+    public func removeTop(with new: NSLayoutConstraint? = nil) -> SimpleLayoutObject {
+        if removeConstraint(constraints.top, new: new) {
             constraints.top = nil
         }
         return self
     }
     @discardableResult
-    public func removeTrailing() -> SimpleLayoutObject {
-        if let trailing = constraints.trailing {
-            view.superview?.removeConstraint(trailing)
+    public func removeTrailing(with new: NSLayoutConstraint? = nil) -> SimpleLayoutObject {
+        if removeConstraint(constraints.trailing, new: new) {
             constraints.trailing = nil
         }
         return self
@@ -204,15 +218,30 @@ public class SimpleLayoutObject: NSObject {
     
     // MARK: - Private methods
     
-    private func removeHorizontalConstraints() {
-        removeLeading()
-        removeTrailing()
-        removeCenterX()
+    private func isRemovableConstraint(_ constraint: NSLayoutConstraint, new: NSLayoutConstraint?) -> Bool {
+        guard let new = new, constraint.firstAttribute != new.firstAttribute else {
+            return true
+        }
+        let originItem = (constraint.secondItem as? UIView) ?? (constraint.secondItem as? NSLayoutConstraint)
+        let newItem = (new.secondItem as? UIView) ?? (new.secondItem as? NSLayoutConstraint)
+        return originItem == newItem
     }
-    private func removeVerticalConstraints() {
-        removeTop()
-        removeCenterY()
-        removeBottom()
+    private func removeConstraint(_ constraint: NSLayoutConstraint?, new: NSLayoutConstraint?) -> Bool {
+        guard let constraint = constraint, isRemovableConstraint(constraint, new: new) else {
+            return false
+        }
+        view.superview?.removeConstraint(constraint)
+        return true
+    }
+    private func removeHorizontalConstraints(with new: NSLayoutConstraint? = nil) {
+        removeLeading(with: new)
+        removeTrailing(with: new)
+        removeCenterX(with: new)
+    }
+    private func removeVerticalConstraints(with new: NSLayoutConstraint? = nil) {
+        removeTop(with: new)
+        removeCenterY(with: new)
+        removeBottom(with: new)
     }
     private func toItem(with target: Any?) -> Any? {
         return target != nil ? target! : view.superview as Any
