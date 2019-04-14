@@ -172,7 +172,7 @@ $ brew install carthage
 To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "pisces/SimpleLayout" ~> 1.0.2
+github "pisces/SimpleLayout" ~> 1.0.3
 ```
 
 Run `carthage update` to build the framework and drag the built `SimpleLayout.framework` into your Xcode project.
