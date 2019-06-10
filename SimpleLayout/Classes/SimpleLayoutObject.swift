@@ -39,7 +39,7 @@ public class SimpleLayoutObject: NSObject {
     }
     
     @discardableResult
-    public func bottom(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .bottom, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+    public func bottom(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .bottom, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -85,7 +85,7 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     @discardableResult
-    public func trailing(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .trailing, relation: NSLayoutRelation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+    public func trailing(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .trailing, relation: NSLayoutConstraint.Relation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: relation, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -115,7 +115,7 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     @discardableResult
-    public func height(by target: Any? = nil, priority: UILayoutPriority = .required, fixed: CGFloat = -1, relation: NSLayoutRelation = .equal, attribute: NSLayoutAttribute = .height, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+    public func height(by target: Any? = nil, priority: UILayoutPriority = .required, fixed: CGFloat = -1, relation: NSLayoutConstraint.Relation = .equal, attribute: NSLayoutConstraint.Attribute = .height, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         if let height = constraints.height {
             view.removeConstraint(height)
             view.superview?.removeConstraint(height)
@@ -131,7 +131,7 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     @discardableResult
-    public func leading(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .leading, relation: NSLayoutRelation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+    public func leading(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .leading, relation: NSLayoutConstraint.Relation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: relation, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -143,7 +143,7 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     @discardableResult
-    public func top(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutAttribute = .top, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+    public func top(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .top, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -155,7 +155,7 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     @discardableResult
-    public func width(by target: Any? = nil, priority: UILayoutPriority = .required, fixed: CGFloat = -1, relation: NSLayoutRelation = .equal, attribute: NSLayoutAttribute = .width, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+    public func width(by target: Any? = nil, priority: UILayoutPriority = .required, fixed: CGFloat = -1, relation: NSLayoutConstraint.Relation = .equal, attribute: NSLayoutConstraint.Attribute = .width, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
         if let width = constraints.width {
             view.removeConstraint(width)
             view.superview?.removeConstraint(width)
