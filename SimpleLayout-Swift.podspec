@@ -8,11 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleLayout-Swift'
-  s.version          = '1.0.3'
-  s.summary          = 'SimpleLayout helps you to using auto layout very easily'
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.version          = '1.1.0'
+  s.summary          = 'SimpleLayout helps you to using auto layout very easily.'
+  s.description      = 'SimpleLayout helps you to using auto layout very easily.'
   s.homepage         = 'https://github.com/pisces/SimpleLayout'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Steve Kim' => 'hh963103@@gmail.com' }
