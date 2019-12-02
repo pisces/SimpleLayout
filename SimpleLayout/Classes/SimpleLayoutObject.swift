@@ -1,29 +1,56 @@
 //
+//  MIT License
+//
+//  Copyright (c) 2019 Steve Kim
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
 //  SimpleLayoutObject.swift
 //  SimpleLayout
 //
-//  Created by pisces on 02/01/2017.
-//  Modified by pisces on 12/14/2017.
+//  Created by Steve Kim on 02/01/2017.
+//  Modified by Steve Kim on 12/14/2017.
 //      - Support iOS 11 and higher
-//  Modified by pisces on 4/12/2018.
+//  Modified by Steve Kim on 4/12/2018.
 //      - Add priority to NSLayoutConstraint
-//  Modified by pisces on 4/6/2019.
+//  Modified by Steve Kim on 4/6/2019.
 //      - Remove constraint if it is equal to origin when set the new constraint.
-//  Copyright © 2016 Steve Kim. All rights reserved.
+//  Modified by Steve Kim on 12/2/2019.
+//      - Clean up warnings.
+//      - Put guard condition for weak reference.
+//  Copyright © 2019 Steve Kim. All rights reserved.
 //
 //
 
 import UIKit
 
-public class SimpleLayoutObject: NSObject {
+final public class SimpleLayoutObject: NSObject {
     
-    // MARK: - Properties
+    // MARK: - Public Properties (Lazy)
     
-    private weak var view: UIView!
+    public lazy var constraints = NSLayoutConstraints()
     
-    public private(set) var constraints = NSLayoutConstraints()
+    // MARK: - Private Properties
     
-    // MARK: - Con(De)structor
+    private weak var view: UIView?
+    
+    // MARK: - Constructors
     
     convenience public init(view: UIView) {
         self.init()
@@ -31,15 +58,21 @@ public class SimpleLayoutObject: NSObject {
         self.view = view
     }
     
-    // MARK: - Public methods
+    // MARK: - Public Methods
     
     public func apply() {
-        view.layoutIfNeeded()
-        view.superview?.layoutIfNeeded()
+        view.map {
+            $0.layoutIfNeeded()
+            $0.superview?.layoutIfNeeded()
+        }
     }
     
     @discardableResult
     public func bottom(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .bottom, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -62,6 +95,10 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func centerX(by target: Any? = nil, priority: UILayoutPriority = .required, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: item, attribute: .centerX, multiplier: multiplier, constant: constant)
         
@@ -74,6 +111,10 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func centerY(by target: Any? = nil, priority: UILayoutPriority = .required, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: item, attribute: .centerY, multiplier: multiplier, constant: constant)
         
@@ -86,6 +127,10 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func trailing(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .trailing, relation: NSLayoutConstraint.Relation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: relation, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -116,6 +161,10 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func height(by target: Any? = nil, priority: UILayoutPriority = .required, fixed: CGFloat = -1, relation: NSLayoutConstraint.Relation = .equal, attribute: NSLayoutConstraint.Attribute = .height, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         if let height = constraints.height {
             view.removeConstraint(height)
             view.superview?.removeConstraint(height)
@@ -132,6 +181,10 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func leading(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .leading, relation: NSLayoutConstraint.Relation = .equal, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: relation, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -144,6 +197,10 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func top(by target: Any? = nil, priority: UILayoutPriority = .required, attribute: NSLayoutConstraint.Attribute = .top, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         let item = toItem(with: target)
         let new = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: item, attribute: attribute, multiplier: multiplier, constant: constant)
         
@@ -156,6 +213,10 @@ public class SimpleLayoutObject: NSObject {
     }
     @discardableResult
     public func width(by target: Any? = nil, priority: UILayoutPriority = .required, fixed: CGFloat = -1, relation: NSLayoutConstraint.Relation = .equal, attribute: NSLayoutConstraint.Attribute = .width, multiplier: CGFloat = 1.0, _ constant: CGFloat = 0) -> SimpleLayoutObject {
+        guard let view = view else {
+            return self
+        }
+        
         if let width = constraints.width {
             view.removeConstraint(width)
             view.superview?.removeConstraint(width)
@@ -171,7 +232,7 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     
-    // MARK: - Remove constraint
+    // MARK: - Pubilc Methods (Remove Constraints)
     
     @discardableResult
     public func removeBottom(with new: NSLayoutConstraint? = nil) -> SimpleLayoutObject {
@@ -216,7 +277,7 @@ public class SimpleLayoutObject: NSObject {
         return self
     }
     
-    // MARK: - Private methods
+    // MARK: - Private Methods
     
     private func isRemovableConstraint(_ constraint: NSLayoutConstraint, new: NSLayoutConstraint?) -> Bool {
         guard let new = new, constraint.firstAttribute != new.firstAttribute else {
@@ -230,7 +291,7 @@ public class SimpleLayoutObject: NSObject {
         guard let constraint = constraint, isRemovableConstraint(constraint, new: new) else {
             return false
         }
-        view.superview?.removeConstraint(constraint)
+        view?.superview?.removeConstraint(constraint)
         return true
     }
     private func removeHorizontalConstraints(with new: NSLayoutConstraint? = nil) {
@@ -244,7 +305,7 @@ public class SimpleLayoutObject: NSObject {
         removeBottom(with: new)
     }
     private func toItem(with target: Any?) -> Any? {
-        return target != nil ? target! : view.superview as Any
+        return target != nil ? target! : view?.superview as Any
     }
 }
 
