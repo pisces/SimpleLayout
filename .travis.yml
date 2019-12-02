@@ -1,6 +1,6 @@
 language: swift
-osx_image: xcode10.1
-script: set -o pipefail && xcodebuild -workspace Example/SimpleLayout.xcworkspace -scheme SimpleLayout-Example -sdk iphonesimulator12.2 | xcpretty
+osx_image: xcode10.3
+script: set -o pipefail && xcodebuild -project SimpleLayout.xcodeproj -scheme SimpleLayout -sdk iphonesimulator | xcpretty
 
 
 
