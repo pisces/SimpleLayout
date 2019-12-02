@@ -2,7 +2,7 @@
 
 SimpleLayout helps you to using auto layout very easily
 
-![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5-orange.svg)
 [![CI Status](http://img.shields.io/travis/pisces/SimpleLayout.svg?style=flat)](https://travis-ci.org/pisces/SimpleLayout)
 [![Version](https://img.shields.io/cocoapods/v/SimpleLayout-Swift.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
 [![License](https://img.shields.io/cocoapods/l/SimpleLayout-Swift.svg?style=flat)](http://cocoapods.org/pods/SimpleLayout-Swift)
@@ -173,7 +173,7 @@ $ brew install carthage
 To integrate SimpleLayout into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "pisces/SimpleLayout" ~> 1.1.0
+github "pisces/SimpleLayout" ~> 1.2.0
 ```
 
 Run `carthage update` to build the framework and drag the built `SimpleLayout.framework` into your Xcode project.
