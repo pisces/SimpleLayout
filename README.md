@@ -173,7 +173,7 @@ $ brew install carthage
 To integrate SimpleLayout into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "pisces/SimpleLayout" ~> 1.2.0
+github "pisces/SimpleLayout" ~> 1.2.1
 ```
 
 Run `carthage update` to build the framework and drag the built `SimpleLayout.framework` into your Xcode project.
